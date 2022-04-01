@@ -4,11 +4,11 @@ on: [push, pull_request ]
 jobs:   
   build:
     runs-on: ubuntu-20.04
-    container:
-      image: nfriedly/miyoo-toolchain:latest
+#     container:
+#       image: nfriedly/miyoo-toolchain:latest
     steps:
     - uses: actions/checkout@v3
-    - run: echo $CWD; echo $PATH
+    - run: echo cwd; echo $PATH
     - name: build
       run: make
     - uses: actions/upload-artifact@v2
