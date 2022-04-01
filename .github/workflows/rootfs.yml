@@ -13,6 +13,6 @@ jobs:
       run: make
     - uses: actions/upload-artifact@v2
       with:
-        name: output/images
+        name: buildroot-images
         path: output/images/*
         if-no-files-found: error # 'error', 'warn', 'ignore'; defaults to `warn`
