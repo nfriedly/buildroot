@@ -16,6 +16,13 @@ jobs:
 #         if-no-files-found: error # 'error', 'warn', 'ignore'; defaults to `warn`
   docker:
 #     needs: toolchain
+    permissions:
+      # we need at least one of these to log into docker hub... but I'm not sure which
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
     runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v3
